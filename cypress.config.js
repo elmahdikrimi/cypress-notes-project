@@ -47,6 +47,9 @@ module.exports = defineConfig({
 
       setupNodeEvents(on, config) {
         // implement node event listeners here
+
+        //to pass different env by name 
+        
         const deepmerge = require("deepmerge");
         const path = require("path");
         const fs = require("fs");
@@ -81,6 +84,8 @@ module.exports = defineConfig({
           });
           return loadconfig(config.config);
         };
+
+        
 
 
       },

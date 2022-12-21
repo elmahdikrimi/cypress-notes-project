@@ -57,8 +57,6 @@
    
   "testFirstEnv": "npm-run-all --sequential cy:firstEnv mochawersome:merge --continue-on-error",
  
-   
-  "cy:openEnv": "cypress open --env configFile=secondEnv",
  
    
   "cypress:open": "cypress open --browser chrome",
