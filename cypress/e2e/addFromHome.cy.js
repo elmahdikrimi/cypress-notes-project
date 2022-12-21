@@ -60,7 +60,7 @@ describe('add product from catalogue',()=>{
 
            cy.get('#mini-cart > div.product').should('not.exist')
 
-           cy.get('.minicart-wrapper > a').click()
+           //cy.get('.minicart-wrapper > a').click()
            
            })
            
