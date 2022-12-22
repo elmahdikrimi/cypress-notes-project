@@ -648,3 +648,25 @@ it('has valid env values', () => {
   // to show what the env values were
   cy.screenshot('env', { capture: 'runner' })
 })
+
+
+
+it('fills each empty cell using Hint', () => {
+  cy.visit('/')
+  cy.get('.game__cell.game__cell--filled').should(
+    'have.length',
+    45,
+  )
+  cy.get('.game__cell')
+    .not('.game__cell--filled') // .not('.class') returns all the elements without the class given
+    .each(($cell) => {
+      cy.wrap($cell, { log: false }).click()
+      cy.get('.status__action-hint').click()
+    })
+
+  cy.contains('.overlay__text', 'You solved it').should(
+    'be.visible',
+  )
+})
+//wrap an object to apply cypress api on it
+cy.wrap({ name: getName }).invoke('name').should('eq', 'Jane Lane')
