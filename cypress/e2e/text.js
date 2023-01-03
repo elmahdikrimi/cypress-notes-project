@@ -670,3 +670,12 @@ it('fills each empty cell using Hint', () => {
 })
 //wrap an object to apply cypress api on it
 cy.wrap({ name: getName }).invoke('name').should('eq', 'Jane Lane')
+
+cy.contains('a.link','Sign in').click()
+
+//matchCase to ignore the case
+cy.contains('Sign in',{matchCase:false})
+
+// clear() to clear a text input 
+cy.get('input').clear().type('€20{enter}')
+cy.contains('#cartlink','Shopping cart (5)')
